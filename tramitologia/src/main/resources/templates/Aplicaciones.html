@@ -1,0 +1,104 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tramitologia.com</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link th:href="@{/assets/css/main.css}" rel="stylesheet" />
+</head>
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div th:fragment="whole-cont" id="wrapper">
+
+		<!-- Main -->
+		<div th:fragment="top-part" id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a th:href="@{/}" class="logo"><strong>Tramitologia.com</strong></a>
+					<ul class="icons">
+						<li><a href="https://x.com/?lang=en"
+							class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/"
+							class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/"
+							class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section>
+					<h2>Aplicaciones</h2>
+					<ul class="actions">
+						<li><a th:href="@{/Contactanos}" class="button">Añadir</a></li>
+					</ul>
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th>User Name</th>
+									<th>Cellphone Number</th>
+									<th>Email</th>
+									<th>Application Type</th>
+									<th>Application Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="applicationinfo : ${listApplicationInfo}">
+									<td th:text="${applicationinfo.userName}"></td>
+									<td th:text="${applicationinfo.cellphoneNumber}"></td>
+									<td th:text="${applicationinfo.email}"></td>
+									<td th:text="${applicationinfo.applicationType}"></td>
+									<td th:text="${applicationinfo.applicationDescription}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+				<!-- Section -->
+			</div>
+		</div>
+		<!-- Sidebar -->
+		<div th:fragment="sidebar" id="sidebar">
+			<div class="inner">
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Buscar" />
+					</form>
+				</section>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a th:href="@{/}">Pagina de inicio</a></li>
+						<li><a th:href="@{/Contactanos}">Contactanos</a></li>
+						<li><a th:href="@{/Aplicaciones}">Aplicaiones</a></li>
+						<li><a href="#">Vista3</a></li>
+						<li><a href="#">Vista4</a></li>
+					</ul>
+				</nav>
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Tramitologia. Todos los derechos
+						reservados.</p>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script type="text/javascript"
+		th:src="@{https://kit.fontawesome.com/2578b99d11.js}"></script>
+	<script type="text/javascript" th:src="@{/assets/js/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/assets/js/browser.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/assets/js/breakpoints.min.js}"></script>
+	<script type="text/javascript" th:src="@{/assets/js/util.js}"></script>
+	<script type="text/javascript" th:src="@{/assets/js/main.js}"></script>
+</body>
+</html>
+</html>

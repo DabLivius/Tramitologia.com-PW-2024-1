@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Applications Information</h1>
+		<table border=1>
+			<thead>
+				<tr>
+					<th>User Name</th>
+					<th>Cellphone Number</th>
+					<th>Email</th>
+					<th>Application Type</th>
+					<th>Application Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="applicationinfo : ${listApplicationInfo}">
+					<td th:text="${applicationinfo.userName}"></td>
+					<td th:text="${applicationinfo.cellphoneNumber}"></td>
+					<td th:text="${applicationinfo.email}"></td>
+					<td th:text="${applicationinfo.applicationType}"></td>
+					<td th:text="${applicationinfo.applicationDescription}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h1>Applications</h1>
+		<table border=1>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="zzzapplication: ${zzzlistApplication}">
+					<td th:text="${zzzapplication.applicationid}"></td>
+					<td th:text="${zzzapplication.applicationDate}"></td>
+					<td th:text="${zzzapplication.applicationStatus}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
